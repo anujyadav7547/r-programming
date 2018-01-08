@@ -29,6 +29,10 @@ rankall <- function(outcome, num="best"){
 head(rankall("heart attack", 20), 10)
 tail(rankall("pneumonia", "worst"), 3)
 tail(rankall("heart failure"), 10)
+r <- rankall("pneumonia", "worst")
+as.character(subset(r, State == "NJ")$Hospital)
 
+r <- rankall("heart failure", 10)
+as.character(subset(r, State == "NV")$Hospital)
 
 
